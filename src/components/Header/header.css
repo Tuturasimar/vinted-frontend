@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
+  padding: 0 150px;
 }
 .bar {
   display: flex;
@@ -34,6 +36,7 @@
 }
 
 .boutons button {
+  font-family: "Font";
   border: #15b3bb solid 1px;
   border-radius: 10px;
   margin-right: 10px;
@@ -44,6 +47,7 @@
 }
 
 .bouton {
+  font-family: "Font";
   background-color: #15b3bb;
   color: white;
   border: none;

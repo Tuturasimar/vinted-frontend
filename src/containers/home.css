@@ -1,3 +1,14 @@
+h1 {
+  font-size: 34px;
+  font-family: "Font";
+}
+
+.bigstuff {
+  width: 100%;
+  height: 100vh;
+  background-color: #ebedee;
+}
+
 .container {
   width: 70%;
   margin: 0 auto;
@@ -12,17 +23,18 @@
   background-image: url("../assets/images/image_fond_vinted.jpg");
   background-position: 70% 15%;
   background-repeat: no-repeat;
-  background-size: 150%;
 }
 
 .offerbox {
-  width: 300px;
+  width: 350px;
   height: 200px;
   background-color: white;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
   padding-top: 10px;
+  border: 1px rgb(182, 181, 181) solid;
+  border-radius: 5px;
 }
 .offerbox button {
   background-color: #15b3bb;
@@ -30,6 +42,7 @@
   color: white;
   border-radius: 5px;
   padding: 10px;
+  font-family: "Font";
 }
 
 .offers {
@@ -41,13 +54,13 @@
   height: fit-content;
   box-sizing: border-box;
   margin: 0 10px;
+  text-decoration: none;
 }
 .profile {
   display: flex;
   align-items: center;
   padding-left: 10px;
   margin-bottom: 10px;
-  text-decoration: none;
 }
 
 .profile img {
@@ -59,14 +72,31 @@
 }
 
 .profile > span {
-  color: #cccccc;
-  text-decoration: none;
-  font-size: 15px;
+  color: #c1c1c1;
+  font-size: 12px;
+  font-family: "Font";
 }
 
 .article {
   margin-bottom: 30px;
+  color: black;
+  font-family: "Font";
+  font-size: 14px;
 }
+
+.black {
+  margin-top: 10px;
+}
+.black,
+.grey {
+  padding-left: 10px;
+  line-height: 18px;
+}
+.grey {
+  color: #cccccc;
+  font-size: 12px;
+}
+
 .article img {
   width: 100%;
 }

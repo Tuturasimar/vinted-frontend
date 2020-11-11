@@ -12,26 +12,57 @@
 .smallbox {
   display: flex;
   flex-direction: column;
-  border: 1px black solid;
   width: 40%;
   padding: 30px;
   box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+}
+.smallbox > p {
+  font-family: "Font";
+  font-size: 24px;
 }
 
+.grey2,
+.black2 {
+  font-family: "Font Bold";
+  font-size: 14px;
+  color: #c1c1c1;
+}
+.black2 {
+  color: #111111;
+  margin-left: 100px;
+}
 .detail {
   display: flex;
   border-bottom: 1px grey solid;
-  justify-content: space-between;
   padding-bottom: 30px;
 }
 
 .product {
-  margin-bottom: 40px;
-}
+  margin-bottom: 60px;
+  margin-top: 30px;
 
+  font-family: "Font";
+}
+.avatar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 .avatar img {
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 10px;
+}
+
+.achete {
+  color: white;
+  background-color: #15b3bb;
+  outline: none;
+  border: none;
+  padding: 10px 0px;
+  border-radius: 5px;
 }
