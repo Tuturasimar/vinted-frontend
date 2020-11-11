@@ -1,0 +1,72 @@
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.picture {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+  margin-bottom: 30px;
+  background-image: url("../assets/images/image_fond_vinted.jpg");
+  background-position: 70% 15%;
+  background-repeat: no-repeat;
+  background-size: 150%;
+}
+
+.offerbox {
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.offerbox button {
+  background-color: #15b3bb;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.offers {
+  display: flex;
+  flex-wrap: wrap;
+}
+.offer {
+  width: 18%;
+  height: fit-content;
+  box-sizing: border-box;
+  margin: 0 10px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.profile img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.profile > span {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.article {
+  margin-bottom: 30px;
+}
+.article img {
+  width: 100%;
+}

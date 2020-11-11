@@ -1,0 +1,37 @@
+.bigbox {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 50px;
+}
+
+.bigbox img {
+  object-fit: cover;
+  width: 40%;
+}
+
+.smallbox {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  width: 40%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.detail {
+  display: flex;
+  border-bottom: 1px grey solid;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.product {
+  margin-bottom: 40px;
+}
+
+.avatar img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}

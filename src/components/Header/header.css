@@ -1,0 +1,52 @@
+.header {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f6f7;
+  width: 50%;
+}
+.bar input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f5f6f7;
+}
+
+.icon {
+  color: #bbbbbb;
+}
+
+::placeholder {
+  color: #bbbbbb;
+}
+
+.header img {
+  width: 85px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.boutons button {
+  border: #15b3bb solid 1px;
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: #15b3bb;
+  cursor: pointer;
+}
+
+.bouton {
+  background-color: #15b3bb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}

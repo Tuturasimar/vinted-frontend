@@ -1,1 +1,7 @@
 /* Other rules */
+
+@import "./components/Header/header.css";
+
+@import "./containers/home.css";
+
+@import "./containers/offer.css";
