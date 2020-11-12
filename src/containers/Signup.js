@@ -3,8 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Signup = ({ setToken }) => {
-  const [username, setUser] = useState("");
+const Signup = ({ setUser }) => {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,7 +24,7 @@ const Signup = ({ setToken }) => {
             value={username}
             placeholder="Nom d'utilisateur"
             onChange={(event) => {
-              setUser(event.target.value);
+              setUsername(event.target.value);
             }}
           />
           <input
@@ -60,7 +60,7 @@ const Signup = ({ setToken }) => {
                   password: password,
                 }
               );
-              setToken(response.data.token);
+              setUser(response.data.token);
               history.push("/");
             }}
           ></input>

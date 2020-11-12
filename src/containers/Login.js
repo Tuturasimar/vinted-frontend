@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Login = ({ setToken }) => {
+const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -43,7 +43,7 @@ const Login = ({ setToken }) => {
                 password: password,
               }
             );
-            setToken(response.data.token);
+            setUser(response.data.token);
 
             history.push("/");
           }}

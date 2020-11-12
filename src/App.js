@@ -52,10 +52,10 @@ function App() {
               <Offer data={data}></Offer>
             </Route>
             <Route path="/signup">
-              <Signup setToken={setToken}></Signup>
+              <Signup setUser={setUser}></Signup>
             </Route>
             <Route path="/login">
-              <Login setToken={setToken}></Login>
+              <Login setUser={setUser}></Login>
             </Route>
             <Route path="/">
               <Home data={data}></Home>
