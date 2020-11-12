@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../components/Header/Header";
 
 const Home = ({ data }) => {
   return (
     <>
-      <Header />
       <div className="container">
         <div className="picture">
           <div className="offerbox">

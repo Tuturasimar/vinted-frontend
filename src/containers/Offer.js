@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../components/Header/Header";
 import { useParams } from "react-router-dom";
 const Offer = ({ data }) => {
   const { id } = useParams();
   return (
     <div className="bigstuff">
-      <Header />
       <div className="container">
         {data.offers.map((list, index) => {
           if (list._id === id) {
@@ -19,20 +17,18 @@ const Offer = ({ data }) => {
                   <div className="smallbox">
                     <p>{list.product_price} €</p>
                     <div className="detail">
-                      <div className="grey2">
-                        <p>MARQUE</p>
-                        <p>TAILLE</p>
-                        <p>ÉTAT</p>
-                        <p>COULEUR</p>
-                        <p>EMPLACEMENT</p>
-                      </div>
-                      <div className="black2">
-                        <p>{list.product_details[0].MARQUE}</p>
-                        <p>{list.product_details[1].TAILLE}</p>
-                        <p>{list.product_details[2].ÉTAT}</p>
-                        <p>{list.product_details[3].COULEUR}</p>
-                        <p>{list.product_details[4].EMPLACEMENT}</p>
-                      </div>
+                      {list.product_details.map((elem, index) => {
+                        console.log(elem);
+                        const keys = Object.keys(elem);
+                        return (
+                          <>
+                            <p key={index}>
+                              <span className="grey2">{keys[0]}</span>
+                              <span className="black2">{elem[keys[0]]}</span>
+                            </p>
+                          </>
+                        );
+                      })}
                     </div>
 
                     <div className="product">

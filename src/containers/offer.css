@@ -31,14 +31,15 @@
 }
 .black2 {
   color: #111111;
-  margin-left: 100px;
 }
 .detail {
-  display: flex;
   border-bottom: 1px grey solid;
   padding-bottom: 30px;
 }
-
+.detail p {
+  display: flex;
+  justify-content: space-between;
+}
 .product {
   margin-bottom: 60px;
   margin-top: 30px;
