@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Home = ({ data }) => {
   return (
     <>
-      <div className="container">
-        <div className="picture">
+      <div className="picture">
+        <div className="container">
           <div className="offerbox">
             <h1>Prêts à faire du tri dans vos placards ?</h1>
             <Link to={"/offer"}>
@@ -13,6 +13,9 @@ const Home = ({ data }) => {
             </Link>
           </div>
         </div>
+      </div>
+
+      <div className="container">
         <div className="offers">
           {data.offers.map((offer, index) => {
             // console.log(offer);

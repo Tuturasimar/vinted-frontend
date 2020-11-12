@@ -1,7 +1,8 @@
 .bigbox {
   display: flex;
   justify-content: space-between;
-  margin: 20px 50px;
+  margin: 0px 50px;
+  padding-top: 30px;
 }
 
 .bigbox img {
