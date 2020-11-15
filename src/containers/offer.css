@@ -45,6 +45,8 @@
   margin-top: 30px;
 
   font-family: "Font";
+  overflow-x: scroll;
+  overflow: auto;
 }
 .avatar {
   display: flex;
