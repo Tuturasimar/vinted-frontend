@@ -96,4 +96,10 @@
     margin: 0px;
     font-family: "Font";
   }
+  .smallbox {
+    padding: 5px 10px;
+  }
+  .smallbox > p {
+    font-size: 15px;
+  }
 }
