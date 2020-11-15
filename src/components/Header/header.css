@@ -1,6 +1,6 @@
 .header {
   height: 50px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
   background-color: white;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   background-color: #f5f6f7;
-  width: 50%;
+  width: 40%;
 }
 .bar input {
   width: 100%;
@@ -38,15 +38,27 @@
   cursor: pointer;
 }
 
-.boutons button {
+.deco {
+  background-color: #c2225b;
+  padding: 10px 20px;
   font-family: "Font";
-  border: #15b3bb solid 1px;
+  cursor: pointer;
+  outline: none;
   border-radius: 10px;
+  color: white;
+  border: none;
+}
+
+.boutonco {
+  border: #15b3bb solid 1px;
   margin-right: 10px;
   padding: 10px 20px;
+  font-family: "Font";
   background-color: white;
   color: #15b3bb;
   cursor: pointer;
+  outline: none;
+  border-radius: 10px;
 }
 
 .bouton {
@@ -56,4 +68,5 @@
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+  cursor: pointer;
 }

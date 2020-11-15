@@ -11,3 +11,89 @@
 @import "./containers/signUp.css";
 
 @import "./containers/login.css";
+
+@media (max-width: 1200px) {
+  .container {
+    width: 768px;
+  }
+  .offer {
+    width: 23%;
+  }
+  .bar {
+    width: 30%;
+  }
+  .bigbox > img {
+    width: 300px;
+  }
+
+  .smallbox {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bouton {
+    display: none;
+  }
+
+  .container {
+    width: 600px;
+  }
+  .offer {
+    width: 25%;
+  }
+  .offerbox {
+    width: 300px;
+    height: 200px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .bigbox > img {
+    width: 260px;
+  }
+
+  .smallbox {
+    width: 260px;
+  }
+  .grey2,
+  .black2 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+  .offer {
+    width: 45%;
+  }
+
+  .deco {
+    padding: 10px 10px;
+  }
+
+  .boutonco {
+    padding: 10px 10px;
+  }
+  .bar {
+    display: none;
+  }
+  .profile > span {
+    font-size: 10px;
+  }
+  .bigbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+  }
+  .detail {
+    padding-bottom: 0px;
+  }
+  .product {
+    margin: 0px;
+    font-family: "Font";
+  }
+}

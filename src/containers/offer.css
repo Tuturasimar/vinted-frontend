@@ -1,19 +1,18 @@
 .bigbox {
   display: flex;
   justify-content: space-between;
-  margin: 0px 50px;
   padding-top: 30px;
 }
 
 .bigbox img {
   object-fit: cover;
-  width: 40%;
+  width: 400px;
 }
 
 .smallbox {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 400px;
   padding: 30px;
   box-sizing: border-box;
   border-radius: 10px;
