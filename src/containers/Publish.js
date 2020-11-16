@@ -68,7 +68,18 @@ const Publish = ({ token }) => {
                       />
                     </>
                   ) : (
-                    <img src={`${pic}`} alt="prévisualisation"></img>
+                    <div className="pic">
+                      <div
+                        className="carré"
+                        onClick={(event) => {
+                          setPicture();
+                        }}
+                      >
+                        x
+                      </div>
+
+                      <img src={`${pic}`} alt="prévisualisation"></img>
+                    </div>
                   )}
                 </div>
               </div>
@@ -137,7 +148,7 @@ const Publish = ({ token }) => {
                     }}
                   ></input>
                 </div>
-                <div className="publish_details">
+                <div className="publish_details2">
                   <p>Lieu</p>
                   <input
                     type="text"
@@ -149,7 +160,7 @@ const Publish = ({ token }) => {
                 </div>
               </div>
               <div className="whitebox2">
-                <div className="publish_details">
+                <div className="publish_details2">
                   <p>Prix</p>
                   <input
                     type="text"

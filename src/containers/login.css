@@ -39,6 +39,7 @@
   border-radius: 5px;
   color: white;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .link {
@@ -46,4 +47,5 @@
   color: #29b3bb;
   font-family: "Font";
   font-size: 13px;
+  cursor: pointer;
 }

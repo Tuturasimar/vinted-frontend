@@ -15,13 +15,6 @@ library.add(faSearch);
 
 function App() {
   const [token, setToken] = useState("");
-  // const fetchData = async () => {
-  //   const response = await axios.get(
-  //     "https://lereacteur-vinted-api.herokuapp.com/offers"
-  //   );
-  //   setData(response.data);
-  //   setIsLoading(false);
-  // };
 
   const setUser = (token) => {
     if (token) {
@@ -32,11 +25,6 @@ function App() {
       setToken(null);
     }
   };
-
-  // console.log(data);
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
 
   return (
     <>
