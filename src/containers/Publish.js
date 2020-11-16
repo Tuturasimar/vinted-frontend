@@ -26,7 +26,6 @@ const Publish = ({ token }) => {
   formData.append("size", size);
   formData.append("color", color);
   formData.append("picture", picture);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     const response = await axios.post(
@@ -69,7 +68,7 @@ const Publish = ({ token }) => {
                       />
                     </>
                   ) : (
-                    <img src={`${pic}`} alt="photo"></img>
+                    <img src={`${pic}`} alt="prévisualisation"></img>
                   )}
                 </div>
               </div>
@@ -162,7 +161,7 @@ const Publish = ({ token }) => {
                 </div>
               </div>
 
-              <input type="submit" value="Ajouter"></input>
+              <input className="bouton" type="submit" value="Ajouter"></input>
             </form>
           </div>
         </div>

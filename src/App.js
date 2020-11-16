@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
 import Cookies from "js-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Offer from "./containers/Offer";
@@ -15,16 +14,14 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 library.add(faSearch);
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState({});
   const [token, setToken] = useState("");
-  const fetchData = async () => {
-    const response = await axios.get(
-      "https://lereacteur-vinted-api.herokuapp.com/offers"
-    );
-    setData(response.data);
-    setIsLoading(false);
-  };
+  // const fetchData = async () => {
+  //   const response = await axios.get(
+  //     "https://lereacteur-vinted-api.herokuapp.com/offers"
+  //   );
+  //   setData(response.data);
+  //   setIsLoading(false);
+  // };
 
   const setUser = (token) => {
     if (token) {
@@ -36,37 +33,34 @@ function App() {
     }
   };
 
-  console.log(data);
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // console.log(data);
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
   return (
     <>
-      {isLoading ? (
-        <span>En cours de chargement...</span>
-      ) : (
-        <Router>
-          <Header token={token} setUser={setUser} />
-          <Switch>
-            <Route path="/offer/:id">
-              <Offer data={data}></Offer>
-            </Route>
-            <Route path="/signup">
-              <Signup setUser={setUser}></Signup>
-            </Route>
-            <Route path="/login">
-              <Login setUser={setUser}></Login>
-            </Route>
-            <Route path="/publish">
-              <Publish token={token}></Publish>
-            </Route>
-            <Route path="/">
-              <Home data={data} token={token}></Home>
-            </Route>
-          </Switch>
-        </Router>
-      )}
+      <Router>
+        <Header token={token} setUser={setUser} />
+        <Switch>
+          <Route path="/offer/:id">
+            <Offer></Offer>
+          </Route>
+          <Route path="/signup">
+            <Signup setUser={setUser}></Signup>
+          </Route>
+          <Route path="/login">
+            <Login setUser={setUser}></Login>
+          </Route>
+          <Route path="/publish">
+            <Publish token={token}></Publish>
+          </Route>
+          <Route path="/">
+            <Home token={token}></Home>
+          </Route>
+        </Switch>
+      </Router>
+      )
     </>
   );
 }
