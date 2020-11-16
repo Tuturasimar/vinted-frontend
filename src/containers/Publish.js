@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory, Redirect } from "react-router-dom";
 
-const Publish = () => {
+const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -40,7 +40,6 @@ const Publish = () => {
     );
     history.push("/");
   };
-  const token = "338832948294";
   if (token) {
     return (
       <div className="bigstuff">
