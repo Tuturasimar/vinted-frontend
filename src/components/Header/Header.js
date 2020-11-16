@@ -36,7 +36,15 @@ const Header = ({ token, setUser }) => {
             </>
           )}
         </div>
-        <button className="bouton">Vends tes articles</button>
+        {token ? (
+          <Link to="/publish">
+            <button className="bouton">Vends tes articles</button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="bouton">Vends tes articles</button>
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -2,16 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Noimg from "../assets/images/noimage.jpg";
 
-const Home = ({ data }) => {
+const Home = ({ data, token }) => {
   return (
     <>
       <div className="picture">
         <div className="container">
           <div className="offerbox">
             <h1>Prêts à faire du tri dans vos placards ?</h1>
-            <Link to={"/offer"}>
-              <button>Commencer à vendre</button>
-            </Link>
+            {token ? (
+              <Link to={"/publish"}>
+                <button>Commencer à vendre</button>
+              </Link>
+            ) : (
+              <Link to={"/login"}>
+                <button>Commencer à vendre</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
