@@ -1,4 +1,5 @@
 import React from "react";
+import Noimg from "../assets/images/noimage.jpg";
 import { useParams } from "react-router-dom";
 const Offer = ({ data }) => {
   const { id } = useParams();
@@ -35,10 +36,15 @@ const Offer = ({ data }) => {
                       <p>{list.product_name}</p>
                       <p className="grey2">{list.product_description}</p>
                       <div className="avatar">
-                        <img
-                          alt="avatar"
-                          src={`${list.owner.account.avatar.secure_url}`}
-                        ></img>
+                        {list.owner.account.avatar ? (
+                          <img
+                            alt="avatar"
+                            src={`${list.owner.account.avatar.secure_url}`}
+                          ></img>
+                        ) : (
+                          <img alt="noimg" src={Noimg}></img>
+                        )}
+
                         <span>{list.owner.account.username}</span>
                       </div>
                     </div>
