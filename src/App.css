@@ -29,6 +29,9 @@
   .smallbox {
     width: 300px;
   }
+  .article img {
+    height: 250px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -40,11 +43,14 @@
     width: 600px;
   }
   .offer {
-    width: 25%;
+    width: 35%;
   }
   .offerbox {
     width: 300px;
     height: 200px;
+  }
+  .article img {
+    height: 300px;
   }
   h1 {
     font-size: 25px;
@@ -66,9 +72,6 @@
   .container {
     width: 100%;
   }
-  .offer {
-    width: 45%;
-  }
 
   .deco {
     padding: 10px 10px;
@@ -81,7 +84,8 @@
     display: none;
   }
   .profile > span {
-    font-size: 10px;
+    font-size: 8px;
+    overflow: hidden;
   }
   .bigbox {
     display: flex;
@@ -101,5 +105,15 @@
   }
   .smallbox > p {
     font-size: 15px;
+  }
+  .offer {
+    width: 35%;
+  }
+  .offerbox {
+    width: 300px;
+    height: 200px;
+  }
+  .article img {
+    height: 200px;
   }
 }
