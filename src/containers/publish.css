@@ -93,3 +93,14 @@ h2 {
 .publish_description textarea:focus {
   border-color: #29b3bb;
 }
+
+.bouton_ajoute {
+  font-family: "Font";
+  background-color: #15b3bb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+}

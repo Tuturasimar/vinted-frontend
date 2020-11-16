@@ -161,7 +161,11 @@ const Publish = ({ token }) => {
                 </div>
               </div>
 
-              <input className="bouton" type="submit" value="Ajouter"></input>
+              <input
+                className="bouton_ajoute"
+                type="submit"
+                value="Ajouter"
+              ></input>
             </form>
           </div>
         </div>

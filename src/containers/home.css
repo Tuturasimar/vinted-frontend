@@ -5,7 +5,8 @@ h1 {
 
 .bigstuff {
   width: 100%;
-  height: fit-content;
+  max-height: 1100px;
+  min-height: 900px;
   background-color: #ebedee;
 }
 
