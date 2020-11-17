@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Noimg from "../assets/images/noimage.jpg";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 const Offer = ({ token }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
+  const history = useHistory();
+
   const fetchData = async () => {
     const response = await axios.get(
       "https://lereacteur-vinted-api.herokuapp.com/offers"
@@ -70,14 +72,19 @@ const Offer = ({ token }) => {
                           </div>
                         </div>
 
-                        <Link
-                          className="linkachete"
-                          to={{
-                            pathname: "/payment",
-                            state: { token: { token } },
-                          }}
-                        >
-                          <button className="achete">Acheter</button>
+                        <Link className="linkachete">
+                          <button
+                            className="achete"
+                            onClick={() => {
+                              history.push("/payment", {
+                                token: token,
+                                title: list.product_name,
+                                amount: list.product_price,
+                              });
+                            }}
+                          >
+                            Acheter
+                          </button>
                         </Link>
                       </div>
                     </div>

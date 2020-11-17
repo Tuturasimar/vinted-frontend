@@ -5,9 +5,10 @@ import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../components/CheckoutForm/CheckoutForm";
 
-const Payment = ({ token }) => {
+const Payment = ({ token, title, amount }) => {
   const stripePromise = loadStripe("pk_test_5z9rSB8XwuAOihoBixCMfL6X");
-
+  console.log("titre", title);
+  console.log(amount);
   if (token) {
     return (
       <>
@@ -18,7 +19,7 @@ const Payment = ({ token }) => {
                 <p>Résumé de la commande</p>
                 <div>
                   <span>Commande</span>
-                  <span></span>
+                  <span>{amount}</span>
                 </div>
                 <div>
                   <span>Frais protection acheteurs</span>
@@ -35,7 +36,7 @@ const Payment = ({ token }) => {
                   <span></span>
                 </div>
                 <p>
-                  Il ne vous reste plus qu'une étape pour vous offrir (....).
+                  Il ne vous reste plus qu'une étape pour vous offrir {title}.
                   Vous allez payer (....) (frais de protection et frais de port
                   inclus).
                 </p>

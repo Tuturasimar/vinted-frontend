@@ -22,7 +22,9 @@ const CheckoutForm = () => {
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
-          stripeToken: stripeToken,
+          token: stripeToken,
+          title: "Test",
+          amount: 1000,
         }
       );
       if (response.data.status === "succeeded") {

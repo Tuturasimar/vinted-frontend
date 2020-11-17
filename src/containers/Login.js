@@ -9,6 +9,8 @@ const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const fromPublish = location.state?.fromPublish ? true : false;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -22,7 +24,7 @@ const Login = ({ setUser }) => {
       if (response.data.token) {
         setUser(response.data.token);
 
-        history.push(location.state.fromPublish ? "/publish" : "/");
+        history.push(fromPublish ? "/publish" : "/");
       } else {
         alert("Une erreur est survenue");
       }
