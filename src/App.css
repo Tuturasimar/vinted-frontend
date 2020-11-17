@@ -14,6 +14,10 @@
 
 @import "./containers/publish.css";
 
+@import "./containers/payment.css";
+
+@import "./components/CheckoutForm/checkoutForm.css";
+
 @media (max-width: 1200px) {
   .container {
     width: 768px;
@@ -73,6 +77,8 @@
 @media (max-width: 600px) {
   .container {
     width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
   .deco {
@@ -86,7 +92,7 @@
     display: none;
   }
   .profile > span {
-    font-size: 8px;
+    font-size: 9px;
     overflow: hidden;
   }
   .bigbox {
@@ -117,5 +123,11 @@
   }
   .article img {
     height: 200px;
+  }
+  .box_payment {
+    width: 90%;
+  }
+  .payment_line {
+    font-size: 13px;
   }
 }

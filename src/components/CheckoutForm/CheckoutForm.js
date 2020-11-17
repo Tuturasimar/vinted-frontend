@@ -37,10 +37,13 @@ const CheckoutForm = () => {
   return (
     <div>
       {succeed ? (
-        <p>Paiement validé</p>
+        <p className="validation">Paiement validé !</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <CardElement /> <button type="submit">Pay</button>
+          <CardElement className="card_stuff" />
+          <button className="button_pay" type="submit">
+            Pay
+          </button>
         </form>
       )}
     </div>

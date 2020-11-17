@@ -1,0 +1,23 @@
+.card_stuff {
+  border: none;
+  box-shadow: 1px 1px 1px 1px grey;
+  padding: 20px 0px;
+  font-family: "Font";
+}
+
+.button_pay {
+  width: 100%;
+  background-color: #32c06d;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  color: white;
+  margin-top: 20px;
+  font-family: "Font";
+  font-size: 17px;
+}
+
+.validation {
+  text-align: center;
+}

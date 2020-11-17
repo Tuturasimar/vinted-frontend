@@ -1,0 +1,51 @@
+.box_payment {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.box_payment2 {
+  width: 100%;
+
+  box-sizing: border-box;
+}
+.first_box {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  background-color: white;
+  padding: 20px;
+  padding-bottom: 50px;
+  font-family: "Font";
+}
+
+.first_box p {
+  font-size: 14px;
+  color: grey;
+}
+
+.payment_line {
+  display: flex;
+  justify-content: space-between;
+  color: #6f6f6f;
+}
+
+.second_box {
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: "Font";
+  background-color: white;
+  padding: 20px;
+  padding-top: 45px;
+}
+
+.second_box span {
+  color: black;
+  font-family: "Font Bold";
+  font-size: 17px;
+}
