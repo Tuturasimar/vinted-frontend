@@ -60,13 +60,20 @@
   object-fit: cover;
   margin-right: 10px;
 }
-
+.linkachete {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
 .achete {
   color: white;
   background-color: #15b3bb;
   outline: none;
   border: none;
-  padding: 10px 0px;
+  padding: 10px 10px;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  font-family: "Font";
+  font-size: 15px;
 }

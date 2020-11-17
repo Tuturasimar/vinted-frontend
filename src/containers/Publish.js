@@ -28,16 +28,21 @@ const Publish = ({ token }) => {
   formData.append("picture", picture);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-      formData,
-      {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      }
-    );
-    history.push("/");
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: {
+            authorization: "Bearer " + token,
+          },
+        }
+      );
+      // console.log(response.data);
+      history.push("/");
+    } catch (error) {
+      console.log(error.response);
+    }
   };
   if (token) {
     return (
@@ -183,7 +188,9 @@ const Publish = ({ token }) => {
       </div>
     );
   } else {
-    return <Redirect to="/login" />;
+    return (
+      <Redirect to={{ pathname: "/login", state: { fromPublish: true } }} />
+    );
   }
 };
 export default Publish;

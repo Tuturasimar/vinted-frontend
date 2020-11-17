@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Noimg from "../assets/images/noimage.jpg";
-import { useParams } from "react-router-dom";
-const Offer = () => {
+import { useParams, Link } from "react-router-dom";
+const Offer = ({ token }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
   const fetchData = async () => {
@@ -69,7 +69,16 @@ const Offer = () => {
                             <span>{list.owner.account.username}</span>
                           </div>
                         </div>
-                        <button className="achete">Acheter</button>
+
+                        <Link
+                          className="linkachete"
+                          to={{
+                            pathname: "/payment",
+                            state: { token: { token } },
+                          }}
+                        >
+                          <button className="achete">Acheter</button>
+                        </Link>
                       </div>
                     </div>
                   </>
