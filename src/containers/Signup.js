@@ -7,9 +7,34 @@ const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (email && username && password) {
+      try {
+        const response = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+          {
+            username: username,
+            email: email,
+            password: password,
+          }
+        );
+
+        if (response.data.token) {
+          setUser(response.data.token);
+          history.push("/");
+        } else {
+          alert("Une erreur est survenue");
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    } else {
+      setStatus(true);
+    }
   };
 
   const history = useHistory();
@@ -56,27 +81,16 @@ const Signup = ({ setUser }) => {
                 confirme avoir au moins 18 ans.
               </p>
             </div>
-            <input
-              type="submit"
-              value="S'inscrire"
-              onClick={async () => {
-                const response = await axios.post(
-                  "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-                  {
-                    username: username,
-                    email: email,
-                    password: password,
-                  }
-                );
-
-                setUser(response.data.token);
-                history.push("/");
-              }}
-            ></input>
+            <input type="submit" value="S'inscrire"></input>
             <Link className="link" to="/login">
               Tu as déjà un compte ? Connecte-toi !
             </Link>
           </form>
+          {status && (
+            <span className="alert" style={{ visibility: "visible" }}>
+              Il faut remplir tous les champs.
+            </span>
+          )}
         </div>
       </div>
     </>

@@ -8,28 +8,34 @@ const Login = ({ setUser }) => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(false);
 
   const fromPublish = location.state?.fromPublish ? true : false;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/user/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
-      if (response.data.token) {
-        setUser(response.data.token);
+    if (email && password) {
+      try {
+        const response = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/user/login",
+          {
+            email: email,
+            password: password,
+          }
+        );
+        if (response.data.token) {
+          setUser(response.data.token);
+          setStatus(false);
 
-        history.push(fromPublish ? "/publish" : "/");
-      } else {
-        alert("Une erreur est survenue");
+          history.push(fromPublish ? "/publish" : "/");
+        } else {
+          alert("Une erreur est survenue");
+        }
+      } catch (error) {
+        console.log(error.message);
       }
-    } catch (error) {
-      console.log(error.message);
+    } else {
+      setStatus(true);
     }
   };
 
@@ -37,6 +43,7 @@ const Login = ({ setUser }) => {
     <div className="container">
       <div className="formulaire">
         <p>Se connecter</p>
+
         <form className="forminput" onSubmit={handleSubmit}>
           <input
             type="email"
@@ -54,7 +61,9 @@ const Login = ({ setUser }) => {
               setPassword(event.target.value);
             }}
           />
+
           <input type="submit" value="Se connecter"></input>
+
           <Link className="link" to="/signup">
             Pas encore de compte ? Inscris-toi !
           </Link>

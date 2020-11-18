@@ -13,6 +13,7 @@ const Publish = ({ token }) => {
   const [color, setColor] = useState("");
   const [picture, setPicture] = useState();
   const [pic, setPic] = useState();
+  const [status, setStatus] = useState(false);
 
   const history = useHistory();
 
@@ -28,20 +29,24 @@ const Publish = ({ token }) => {
   formData.append("picture", picture);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-        formData,
-        {
-          headers: {
-            authorization: "Bearer " + token,
-          },
-        }
-      );
-      // console.log(response.data);
-      history.push("/");
-    } catch (error) {
-      console.log(error.response);
+    if (title && picture) {
+      try {
+        const response = await axios.post(
+          "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+          formData,
+          {
+            headers: {
+              authorization: "Bearer " + token,
+            },
+          }
+        );
+        // console.log(response.data);
+        history.push("/");
+      } catch (error) {
+        console.log(error.response);
+      }
+    } else {
+      setStatus(true);
     }
   };
   if (token) {
@@ -176,7 +181,12 @@ const Publish = ({ token }) => {
                   ></input>
                 </div>
               </div>
-
+              {status && (
+                <span className="alert" style={{ visibility: "visible" }}>
+                  Il faut au moins renseigner le titre et une photo de
+                  l'article.
+                </span>
+              )}
               <input
                 className="bouton_ajoute"
                 type="submit"

@@ -29,6 +29,8 @@ const CheckoutForm = () => {
       );
       if (response.data.status === "succeeded") {
         setSucceed(true);
+      } else {
+        alert("Une erreur est survenue");
       }
     } catch (error) {
       console.log(error.message);
