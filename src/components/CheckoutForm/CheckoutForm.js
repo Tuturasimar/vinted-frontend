@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import axios from "axios";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ title, amount }) => {
   const [succeed, setSucceed] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
@@ -23,10 +23,11 @@ const CheckoutForm = () => {
         "https://lereacteur-vinted-api.herokuapp.com/payment",
         {
           token: stripeToken,
-          title: "Test",
-          amount: 1000,
+          title: title,
+          amount: Number(amount * 100).toFixed(2),
         }
       );
+      console.log(response);
       if (response.data.status === "succeeded") {
         setSucceed(true);
       } else {
